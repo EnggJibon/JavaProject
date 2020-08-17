@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<job id="karteBatchlet" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">   
+<!--
+    <step id="externalDataGetBatchlet">
+        <batchlet ref="externalDataGetBatchlet" />
+        <next on="*" to="externalComponentInspectionBatchlet"></next>
+    </step>
+-->
+    <step id="externalComponentInspectionBatchlet">
+        <batchlet ref="externalComponentInspectionBatchlet" />
+        <next on="*" to="productionPlanUpdateBatchlet"></next>
+    </step>
+    <step id="productionPlanUpdateBatchlet">
+        <batchlet ref="productionPlanUpdateBatchlet" />
+        <next on="*" to="moldMachineMaintenanceCycleBatchlet"></next>
+    </step>
+    <step id="moldMachineMaintenanceCycleBatchlet">
+        <batchlet ref="moldMachineMaintenanceCycleBatchlet" />
+        <next on="*" to="productionPeriodBatchlet"></next>
+    </step>
+    <step id="productionPeriodBatchlet">
+        <batchlet ref="productionPeriodBatchlet" />
+        <next on="*" to="machineOperatingRateBatchlet"></next>
+    </step>
+    <step id="machineOperatingRateBatchlet">
+        <batchlet ref="machineOperatingRateBatchlet" />
+        <next on="*" to="externalAssetDisposalBatchlet"></next>
+    </step>
+    <step id="externalAssetDisposalBatchlet">
+        <batchlet ref="externalAssetDisposalBatchlet" />
+        <next on="*" to="externalInventoryBatchlet"></next>
+    </step>
+    <step id="externalInventoryBatchlet">
+        <batchlet ref="externalInventoryBatchlet" />
+    </step>
+</job>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<job id="dailyMailAlertBatchlet" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">   
+    <step id="mainteCycleAlertBatchlet">
+        <batchlet ref="mainteCycleAlertBatchlet" />
+        <next on="*" to="issueDueAlertBatchlet"></next>
+    </step>
+    <step id="issueDueAlertBatchlet">
+        <batchlet ref="issueDueAlertBatchlet" />
+        <next on="*" to="remodelingSpecAlertBatchlet"></next>
+    </step>
+    <step id="remodelingSpecAlertBatchlet">
+        <batchlet ref="remodelingSpecAlertBatchlet" />
+    </step>
+</job>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<job id="batchletSample" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="1.0">
+  <step id="step">
+    <batchlet ref="helloWorldBatchlet" />
+  </step>
+</job>
